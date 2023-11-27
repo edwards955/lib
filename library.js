@@ -1,4 +1,8 @@
-const myLibrary = [];
+const myLibrary = [
+  new Book("Harrow County", "Cullen Bunn", 300, 'not yet read'),
+  new Book("Broken Sky", "Chris Wooding", 200, 'read'),
+  new Book("V For Vendetta", "Alan Moore", 250, "not yet read"),
+];
 
 function Book(title, author, pages, read) {
   this.title = title;
@@ -13,12 +17,9 @@ function Book(title, author, pages, read) {
 function addBookToLibrary(title, author, pages, read) {
   let book = new Book(title, author, pages, read);
   myLibrary.push(book);
+  displayLibrary();
   return "Book added";
 }
-
-// Display the library
-
-const libraryBody = document.querySelector('.library-body');
 
 function displayLibrary() {
   const oldLibrary = document.querySelector('.library-body');
@@ -41,7 +42,6 @@ function displayLibrary() {
     let read = document.createElement('td');
     read.textContent = book.read;
 
-
     // Attach cells to the row
     row.appendChild(title);
     row.appendChild(author);
@@ -54,3 +54,5 @@ function displayLibrary() {
 
   oldLibrary.parentNode.replaceChild(newLibrary, oldLibrary);
 }
+
+displayLibrary();
