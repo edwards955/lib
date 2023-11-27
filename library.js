@@ -56,6 +56,7 @@ function displayLibrary() {
 }
 
 const dialog = document.querySelector('.newBookForm');
+const form = document.querySelector('form');
 const newBookButton = document.querySelector('.addNewBook');
 const cancelButton = document.querySelector('.cancelButton');
 const submitBookButton = document.querySelector('.submitBookButton');
@@ -80,6 +81,7 @@ submitBookButton.addEventListener('click', (e) => {
     pagesInput.value,
     readInput.value
   )
+  form.reset();
   dialog.close();
 })
 
