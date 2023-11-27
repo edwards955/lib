@@ -57,9 +57,30 @@ function displayLibrary() {
 
 const dialog = document.querySelector('.newBookForm');
 const newBookButton = document.querySelector('.addNewBook');
+const cancelButton = document.querySelector('.cancelButton');
+const submitBookButton = document.querySelector('.submitBookButton');
+const titleInput = document.querySelector('#title');
+const authorInput = document.querySelector('#author');
+const pagesInput = document.querySelector('#pages');
+const readInput = document.querySelector('#read');
 
 newBookButton.addEventListener('click', () => {
   dialog.showModal();
+})
+
+cancelButton.addEventListener('click', () => {
+  dialog.close();
+})
+
+submitBookButton.addEventListener('click', (e) => {
+  e.preventDefault();
+  addBookToLibrary(
+    titleInput.value,
+    authorInput.value,
+    pagesInput.value,
+    readInput.value
+  )
+  dialog.close();
 })
 
 displayLibrary();

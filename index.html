@@ -22,7 +22,7 @@
   </table>
 
   <dialog class="newBookForm">
-    <form>
+    <form method="dialog">
       <p>
         <label for="title">Book Title:</label>
         <input type="text" name="title" id="title" />
@@ -42,7 +42,8 @@
           <option value="read">Read</option>
         </select>
       </p>
-      <button>Submit Book Information</button>
+      <button class="submitBookButton">Submit Book Information</button>
+      <button type ="button" class="cancelButton">Cancel</button>
     </form>
   </dialog>
 </body>
