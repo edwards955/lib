@@ -55,4 +55,11 @@ function displayLibrary() {
   oldLibrary.parentNode.replaceChild(newLibrary, oldLibrary);
 }
 
+const dialog = document.querySelector('.newBookForm');
+const newBookButton = document.querySelector('.addNewBook');
+
+newBookButton.addEventListener('click', () => {
+  dialog.showModal();
+})
+
 displayLibrary();

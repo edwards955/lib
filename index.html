@@ -8,6 +8,7 @@
   <script src="./library.js" defer></script>
 </head>
 <body>
+  <button type="button" class="addNewBook">Add New Book</button>
   <table class="library">
     <thead>
       <tr>
@@ -19,5 +20,30 @@
     </thead>
     <tbody class="library-body"></tbody>
   </table>
+
+  <dialog class="newBookForm">
+    <form>
+      <p>
+        <label for="title">Book Title:</label>
+        <input type="text" name="title" id="title" />
+      </p>
+      <p>
+        <label for="author">Book Author:</label>
+        <input type="text" name="author" id="author" />
+      </p>
+      <p>
+        <label for="pages">Number of Pages:</label>
+        <input type="number" name="pages" id="pages" min="1" max="1000" step="1">
+      </p>
+      <p>
+        <label for="read">Read?</label>
+        <select name="read" id="read">
+          <option value="not yet read" selected>Not Yet Read</option>
+          <option value="read">Read</option>
+        </select>
+      </p>
+      <button>Submit Book Information</button>
+    </form>
+  </dialog>
 </body>
 </html>
