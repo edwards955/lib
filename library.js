@@ -77,6 +77,7 @@ function displayLibrary() {
   oldLibrary.parentNode.replaceChild(newLibrary, oldLibrary);
 }
 
+// Select DOM elements
 const dialog = document.querySelector('.newBookForm');
 const form = document.querySelector('form');
 const newBookButton = document.querySelector('.addNewBook');
@@ -107,4 +108,5 @@ submitBookButton.addEventListener('click', (e) => {
   dialog.close();
 })
 
+// Display library on page load
 displayLibrary();
