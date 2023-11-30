@@ -26,7 +26,7 @@ function displayLibrary() {
   const newLibrary = document.createElement('tbody');
   newLibrary.classList.toggle('library-body');
   
-  myLibrary.forEach(book => {
+  myLibrary.forEach((book, index) => {
     // Create row for book info
     let row = document.createElement('tr');
     
@@ -42,11 +42,19 @@ function displayLibrary() {
     let read = document.createElement('td');
     read.textContent = book.read;
 
+    let remove = document.createElement('td');
+    let removeButton = document.createElement('button');
+    removeButton.type = 'button';
+    removeButton.textContent = 'Remove';
+    removeButton.value = index;
+    remove.appendChild(removeButton);
+
     // Attach cells to the row
     row.appendChild(title);
     row.appendChild(author);
     row.appendChild(pages);
     row.appendChild(read);
+    row.appendChild(remove);
 
     // Attach row to the table body
     newLibrary.appendChild(row);
