@@ -46,7 +46,11 @@ function displayLibrary() {
     let removeButton = document.createElement('button');
     removeButton.type = 'button';
     removeButton.textContent = 'Remove';
-    removeButton.value = index;
+    removeButton.addEventListener('click', () => {
+      myLibrary.splice(index, 1);
+      displayLibrary();
+    })
+
     remove.appendChild(removeButton);
 
     // Attach cells to the row
