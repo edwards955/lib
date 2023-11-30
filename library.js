@@ -42,6 +42,16 @@ function displayLibrary() {
     let read = document.createElement('td');
     read.textContent = book.read;
 
+    let readToggle = document.createElement('td');
+    let readToggleButton = document.createElement('button');
+    readToggleButton.type = 'button';
+    readToggleButton.textContent = 'Toggle';
+    readToggleButton.addEventListener('click', () => {
+      book.read = book.read === 'read' ? 'not yet read' : 'read';
+      displayLibrary();
+    })
+    readToggle.appendChild(readToggleButton);
+
     let remove = document.createElement('td');
     let removeButton = document.createElement('button');
     removeButton.type = 'button';
@@ -50,7 +60,6 @@ function displayLibrary() {
       myLibrary.splice(index, 1);
       displayLibrary();
     })
-
     remove.appendChild(removeButton);
 
     // Attach cells to the row
@@ -58,6 +67,7 @@ function displayLibrary() {
     row.appendChild(author);
     row.appendChild(pages);
     row.appendChild(read);
+    row.appendChild(readToggle);
     row.appendChild(remove);
 
     // Attach row to the table body
